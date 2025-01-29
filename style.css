@@ -10,9 +10,94 @@ img {
   display: block;
 }
 
+/* generel text styling */
+
+h1 {
+  font-family: "roboto", serif;
+  font-size: 3rem;
+  color: black;
+  text-transform: uppercase;
+}
+h2 {
+  font-family: "roboto", serif;
+  font-size: 2rem;
+  color: black;
+  text-transform: uppercase;
+}
+h3 {
+  font-family: "roboto", serif;
+  font-size: 1.75rem;
+  color: black;
+  text-transform: uppercase;
+}
+h4 {
+  font-family: "lato", serif;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+}
+h5 {
+  font-family: "lato", serif;
+  font-size: 1rem;
+}
+
+p {
+  font-family: "lato", serif;
+  font-size: 1rem;
+}
+
+ul {
+  font-family: "lato", serif;
+  font-size: 1rem;
+}
+
+li {
+  font-family: "lato", serif;
+  font-size: 1rem;
+}
+
+dt {
+  font-family: "lato", serif;
+  font-size: 1rem;
+}
+
+dd {
+  font-family: "lato", serif;
+  font-size: 1rem;
+}
+
+a {
+  font-family: "lato", serif;
+  font-size: 1rem;
+}
+
 /* category_list forside */
 .category_list_container {
 }
 
 .category_list_button {
+}
+
+/*  prduktliste */
+
+.product-image {
+}
+
+.sold_out_box {
+  padding: 20px;
+  background-color: rgba(152, 193, 217, 0.95);
+  border-top-left-radius: 20px;
+}
+
+.discount_box {
+  padding: 20px;
+  background-color: rgba(152, 193, 217, 0.95);
+  border-bottom-right-radius: 20px;
+}
+
+.prev-price {
+  text-decoration: line-through;
+}
+
+.price {
+  justify-content: flex-end;
 }
