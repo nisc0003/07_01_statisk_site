@@ -4,12 +4,18 @@
 }
 
 /* produktliste side */
+
+.grid_1-1-1-1 {
+  grid-template-columns: repeat(4, 1fr); /* Max 4 columns */
+}
+
 .grid_1-1-1-1 {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 300px));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 30px;
   justify-items: stretch;
   align-items: stretch;
+  width: 100%;
 }
 
 .product_list_container {
@@ -38,6 +44,12 @@
   grid-area: 1 / 1;
   place-self: start;
   z-index: 2;
+}
+
+.brand_info_box {
+  display: flex;
+  gap: 5px;
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .price_box {

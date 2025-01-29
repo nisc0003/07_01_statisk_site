@@ -10,6 +10,11 @@ img {
   display: block;
 }
 
+main {
+  margin-left: 3vw;
+  margin-right: 3vw;
+}
+
 /* generel text styling */
 
 h1 {
@@ -26,7 +31,7 @@ h2 {
 }
 h3 {
   font-family: "roboto", serif;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   color: black;
   text-transform: uppercase;
 }
