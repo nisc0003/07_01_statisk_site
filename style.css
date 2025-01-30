@@ -11,8 +11,117 @@ img {
 }
 
 main {
+  margin-top: 30px;
   margin-left: 3vw;
   margin-right: 3vw;
+  margin-bottom: 30px;
+}
+
+/* burgermenu */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: rgba(41, 50, 65, 1);
+}
+
+header .logo {
+  width: 60px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  margin-right: 20px;
+}
+
+.menu li:last-child {
+  margin-right: 0;
+}
+
+.menu a {
+  display: block;
+  padding: 10px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  transition: color 0.3s;
+  text-align: end;
+}
+
+.menu a:hover {
+  color: rgba(238, 108, 77, 1);
+  scale: 1.01;
+}
+
+.burger {
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.burger .line {
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  margin-bottom: 5px;
+  transition: 0.2s linear;
+}
+.burger {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .menu {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+  .burger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    transition: 0.2s linear;
+  }
+
+  .burger.active .line:nth-child(2) {
+    opacity: 0;
+    transition: 0.15s linear;
+  }
+
+  .burger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+    transition: 0.2s linear;
+  }
+
+  nav.active .menu {
+    display: block;
+    background-color: #000000;
+    position: absolute;
+    top: 94px;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+
+  nav.active .menu li {
+    margin: 10px 20px;
+  }
+
+  nav.active .menu a {
+    font-size: 24px;
+  }
 }
 
 /* generel text styling */
@@ -22,6 +131,7 @@ h1 {
   font-size: 3rem;
   color: black;
   text-transform: uppercase;
+  margin-bottom: 20px;
 }
 h2 {
   font-family: "roboto", serif;
@@ -78,30 +188,61 @@ dd {
 a {
   font-family: "lato", serif;
   font-size: 1rem;
+  color: black;
 }
 
-/* category_list forside */
-.category_list_container {
+.price {
+  font-family: "lato", serif;
+  font-size: 1.25rem;
+}
+
+.prev-price {
+  font-family: "lato", serif;
+  font-size: 1.25rem;
+  color: rgba(199, 0, 0, 0.75);
+}
+
+.discount_box {
+  text-transform: uppercase;
+  color: white;
+}
+.sold_out_box {
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  font-size: 1.25rem;
+  background-color: rgba(255, 255, 255, 0.757);
 }
 
 .category_list_button {
+  display: block;
+  text-align: center;
+  padding: 20px 20px;
+  background-color: rgba(238, 108, 77, 1);
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.category_list_button:hover {
+  background-color: rgba(238, 108, 77, 0.5);
+  transition: 0.4s;
+  scale: 1.01;
 }
 
 /*  prduktliste */
 
-.product-image {
-}
-
 .sold_out_box {
-  padding: 20px;
-  background-color: rgba(152, 193, 217, 0.95);
-  border-top-left-radius: 20px;
+  padding: 10px;
 }
 
 .discount_box {
-  padding: 20px;
-  background-color: rgba(152, 193, 217, 0.95);
-  border-bottom-right-radius: 20px;
+  padding: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: rgb(238, 109, 77);
+  border-radius: 50px;
+  margin: 5px;
 }
 
 .prev-price {
@@ -118,6 +259,8 @@ a {
 }
 
 .selected {
+  font-family: "lato", serif;
+  font-size: 1rem;
   background-color: #f1f1f1;
   border: 1px solid #ddd;
   cursor: pointer;
@@ -125,6 +268,8 @@ a {
 }
 
 .options {
+  font-family: "lato", serif;
+  font-size: 1rem;
   display: none;
   position: absolute;
   top: 35px;
@@ -143,6 +288,7 @@ a {
 
 .option:hover {
   background-color: #f1f1f1;
+  scale: 1.01;
 }
 
 .add-to-cart {
@@ -156,8 +302,9 @@ a {
 }
 
 .add-to-cart:hover {
-  background-color: rgba(152, 193, 217, 1);
+  background-color: rgba(238, 108, 77, 0.5);
   transition: 0.4s;
+  scale: 1.01;
 }
 
 .details-list {
@@ -178,6 +325,24 @@ a {
 .Description_box div {
   padding-bottom: 20px;
   border-bottom: solid rgba(0, 0, 0, 0.1) 2px;
+}
+
+/* footer */
+
+.footer_flexbox {
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  background-color: rgba(41, 50, 65, 1);
+}
+
+.footer_flexbox p {
+  display: flex;
+  color: white;
+  font-family: "roboto", serif;
+  font-size: 1.25rem;
+  place-self: center;
+  font-weight: 300;
 }
 
 @media (min-width: 800px) {
