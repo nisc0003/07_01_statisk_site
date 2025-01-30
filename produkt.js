@@ -1,24 +1,25 @@
-let productId = 1165;
-let product_list_container = document.querySelector(".productContainer");
+let productId = 1163;
+let productContainer = document.querySelector(".product_container");
 fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
   .then((response) => response.json())
   .then((data) => {
     productContainer.innerHTML = `
         <div class="grid_1-1">
-          <div>
-            <img src="billeder/1163.webp" alt="Sahara Team India Fanwear Round Neck Jersey" />
-          </div>
+ <div class="product_img_box">
+              <img class="product-image" src="https://kea-alt-del.dk/t7/images/webp/640/${productId}.webp" alt="${data.productdisplayname}" />
+              <p class="discount_box">${data.discount}</p>
+            </div>
           <div class="grid_1">
             <div class="top-info_product-box">
               <div class="brand_info_box">
-                <p class="brandname">Nike</p>
+                <p class="brandname">${data.brandname}</p>
                 <p>/</p>
-                <p class="articletype">Tshirts</p>
+                <p class="articletype">${data.articletype}</p>
               </div>
-              <h2 class="productdisplayname">Black Fleece Jacket</h2>
+              <h2 class="productdisplayname">${data.productdisplayname}</h2>
               <div class="price_box">
-                <p class="prev-price">3999 kr</p>
-                <p class="price">2.039,49 kr</p>
+                <p class="prev-price">${data.price},-</p>
+                <p class="price">${data.price},-</p>
               </div>
             </div>
             <div class="buy_product-box">
@@ -37,11 +38,11 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
             <div class="Description_box">
               <div>
                 <h4>Description</h4>
-                <p>Blue round neck Sahara Team India jersey, has short sleeves, print on the chest and back chest. Warranty for manufacturing defects: 6 months (not valid on products with more than 20% discount).</p>
+                <p>${data.description}</p>
               </div>
               <div>
                 <h4>Style Description</h4>
-                <p>Cheer for the Indian cricket team on and off the fields in this blue polo neck jersey from Nike.</p>
+                <p>${data.styledesc}</p>
               </div>
             </div>
             <div class="dropdown">
@@ -49,56 +50,56 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
               <dl class="details-list">
                 <div class="dropdown-item">
                   <dt>id number</dt>
-                  <dd>1163</dd>
+                  <dd>${productId}</dd>
                 </div>
 
                 <div class="dropdown-item">
                   <dt>Gender</dt>
-                  <dd>Men</dd>
-                </div>
-
-                <div class="dropdown-item">
-                  <dt>Brand</dt>
-                  <dd>Nike</dd>
+                  <dd>${data.gender}</dd>
                 </div>
 
                 <div class="dropdown-item">
                   <dt>Category</dt>
-                  <dd>Apparel - Topwear - Tshirts</dd>
-                </div>
-
-                <div class="dropdown-item">
-                  <dt>Base Colour</dt>
-                  <dd>Blue</dd>
-                </div>
-
-                <div class="dropdown-item">
-                  <dt>Season</dt>
-                  <dd>Summer</dd>
-                </div>
-
-                <div class="dropdown-item">
-                  <dt>Production Year</dt>
-                  <dd>2011</dd>
-                </div>
-
-                <div class="dropdown-item">
-                  <dt>Usage Type</dt>
-                  <dd>Sports</dd>
+                  <dd>${data.category} - ${data.subcategory} - ${data.articletype}</dd>
                 </div>
 
                 <div class="dropdown-item">
                   <dt>Variant Name</dt>
-                  <dd>Roundneck Jersey</dd>
+                  <dd>${data.variantname}</dd>
+                </div>
+
+                <div class="dropdown-item">
+                  <dt>Brand</dt>
+                  <dd>${data.brandname}</dd>
+                </div>
+
+                <div class="dropdown-item">
+                  <dt>Production Year</dt>
+                  <dd>${data.productionyear}</dd>
+                </div>
+
+                <div class="dropdown-item">
+                  <dt>Usage Type</dt>
+                  <dd>${data.usagetype}</dd>
+                </div>
+
+                <div class="dropdown-item">
+                  <dt>Season</dt>
+                  <dd>${data.season}</dd>
+                </div>
+
+                <div class="dropdown-item">
+                  <dt>Base color</dt>
+                  <dd>${data.basecolour}</dd>
                 </div>
 
                 <div class="dropdown-item">
                   <dt>Material Care</dt>
-                  <dd>100% polyester. Machine wash.</dd>
+                  <dd>${data.materialcaredesc}</dd>
                 </div>
               </dl>
             </div>
           </div>
         </div>
-           `;
+    `;
   });
