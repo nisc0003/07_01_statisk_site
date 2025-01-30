@@ -1,12 +1,12 @@
-<html lang="da">
+<html lang="en">
   <head>
     <meta name="robots" content="noindex" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="css/layout.css" />
-    <link rel="stylesheet" href="css/styling.css" />
-    <title>Forside</title>
+    <link rel="stylesheet" href="layout.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontpage</title>
     <!-- en beskrivende tekst af siden -->
     <!-- <meta
       name="Nicolai Schous portfoliohjemmeside"
@@ -14,11 +14,60 @@
     /> -->
     <!-- favicon -->
     <!-- <link rel="icon" href="assets/favicon.svg" type="image/x-icon" /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
   </head>
   <body>
-   <header></header> 
-   <main></main>
-   <footer></footer>
+    <header>
+      <div class="logo">
+        <a href="/">
+          <img src="billeder/logo.svg" alt="Logo" />
+        </a>
+      </div>
+      <nav>
+        <ul class="menu">
+          <li><a href="index.html">Categories</a></li>
+          <li><a href="">Brands</a></li>
+          <li><a href="">Seasons</a></li>
+        </ul>
+        <div class="burger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <h1>Categories</h1>
+      <div class="grid_1-1-1">
+        <div class="category_list_container">
+          <a class="category_list_button" href="productlist.html">Accessories</a>
+        </div>
+        <div class="category_list_container">
+          <a class="category_list_button" href="productlist.html">Apparel</a>
+        </div>
+        <div class="category_list_container">
+          <a class="category_list_button" href="productlist.html">Footwear</a>
+        </div>
+        <div class="category_list_container">
+          <a class="category_list_button" href="productlist.html">Free Items</a>
+        </div>
+        <div class="category_list_container">
+          <a class="category_list_button" href="productlist.html">Personal Care</a>
+        </div>
+        <div class="category_list_container">
+          <a class="category_list_button" href="productlist.html">Sporting Goods</a>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+    <footer>
+      <div class="footer_flexbox">
+        <p>Lavet af Nicolai Schou</p>
+        <!-- <p></p>
+        <p></p> -->
+      </div>
+    </footer>
   </body>
-  </html>
 </html>
