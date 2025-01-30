@@ -1,8 +1,12 @@
 let productId = 1163;
 let productContainer = document.querySelector(".product_container");
 fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
-  .then((response) => response.json())
-  .then((data) => {
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    let isSoldOut = data.soldout || false; // Assume API has 'soldout' property
+
     productContainer.innerHTML = `
         <div class="grid_1-1">
  <div class="product_img_box">
@@ -22,18 +26,20 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
                 <p class="price">${data.price},-</p>
               </div>
             </div>
-            <div class="buy_product-box">
+                <div class="buy_product-box">
               <div class="dropdown">
-                <div class="selected">Select Size</div>
+                <div class="selected">${isSoldOut ? "<s>Select Size</s>" : "Select Size"}</div>
                 <div class="options">
-                  <div class="option">X-Small</div>
-                  <div class="option">Small</div>
-                  <div class="option">Medium</div>
-                  <div class="option">Large</div>
-                  <div class="option">X-Large</div>
+                  <div class="option">${isSoldOut ? "<s>X-Small</s>" : "X-Small"}</div>
+                  <div class="option">${isSoldOut ? "<s>Small</s>" : "Small"}</div>
+                  <div class="option">${isSoldOut ? "<s>Medium</s>" : "Medium"}</div>
+                  <div class="option">${isSoldOut ? "<s>Large</s>" : "Large"}</div>
+                  <div class="option">${isSoldOut ? "<s>X-Large</s>" : "X-Large"}</div>
                 </div>
               </div>
-              <button class="add-to-cart">Add to Cart</button>
+              <button class="add-to-cart" ${isSoldOut ? "disabled" : ""}>
+                ${isSoldOut ? "Sold Out" : "Add to Cart"}
+              </button>
             </div>
             <div class="Description_box">
               <div>
