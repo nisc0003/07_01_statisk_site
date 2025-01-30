@@ -28,7 +28,12 @@ header {
 }
 
 header .logo {
-  width: 60px;
+  width: 150px;
+  transition: 0.5s;
+}
+
+.logo:hover {
+  scale: 1.02;
 }
 
 nav {
@@ -56,13 +61,13 @@ nav {
   padding: 10px;
   color: rgb(255, 255, 255);
   text-decoration: none;
-  transition: color 0.3s;
+  transition: 0.5s;
   text-align: end;
 }
 
 .menu a:hover {
-  color: rgba(238, 108, 77, 1);
-  scale: 1.01;
+  color: rgba(197, 9, 9, 1);
+  scale: 1.02;
 }
 
 .burger {
@@ -149,6 +154,7 @@ h4 {
   font-family: "lato", serif;
   font-size: 1.25rem;
   text-transform: uppercase;
+  margin-bottom: 5px;
 }
 h5 {
   font-family: "lato", serif;
@@ -175,6 +181,7 @@ dt {
   font-size: 1rem;
   text-transform: uppercase;
   font-weight: 600;
+  margin-bottom: 5px;
 }
 
 dd {
@@ -182,6 +189,7 @@ dd {
   font-size: 1rem;
   margin-bottom: 15px;
   padding-bottom: 10px;
+  color: rgba(0, 0, 0, 0.6);
   border-bottom: solid rgba(0, 0, 0, 0.1) 2px;
 }
 
@@ -217,7 +225,7 @@ a {
   display: block;
   text-align: center;
   padding: 20px 20px;
-  background-color: rgba(238, 108, 77, 1);
+  background-color: rgba(197, 9, 9, 0.8);
   color: white;
   cursor: pointer;
   border-radius: 5px;
@@ -225,7 +233,7 @@ a {
 }
 
 .category_list_button:hover {
-  background-color: rgba(238, 108, 77, 0.5);
+  background-color: rgba(197, 9, 9, 0.5);
   transition: 0.4s;
   scale: 1.01;
 }
@@ -240,7 +248,7 @@ a {
   padding: 10px;
   padding-top: 15px;
   padding-bottom: 15px;
-  background-color: rgb(238, 109, 77);
+  background-color: rgba(197, 9, 9, 0.8);
   border-radius: 50px;
   margin: 5px;
 }
@@ -256,6 +264,7 @@ a {
 .dropdown {
   position: relative;
   width: 100%;
+  transition: 3s;
 }
 
 .selected {
@@ -265,6 +274,12 @@ a {
   border: 1px solid #ddd;
   cursor: pointer;
   padding: 10px 20px;
+  transition: 0.5s;
+}
+
+.selected:hover {
+  scale: 1.01;
+  background-color: #ddd;
 }
 
 .options {
@@ -284,6 +299,7 @@ a {
 .option {
   padding: 8px;
   cursor: pointer;
+  transition: 0.5s;
 }
 
 .option:hover {
@@ -293,17 +309,17 @@ a {
 
 .add-to-cart {
   padding: 10px 20px;
-  background-color: rgba(238, 108, 77, 1);
+  background-color: rgba(197, 9, 9, 0.8);
   color: white;
   border: none;
   cursor: pointer;
   border-radius: 5px;
   font-size: 1.5rem;
+  transition: 0.4s;
 }
 
 .add-to-cart:hover {
-  background-color: rgba(238, 108, 77, 0.5);
-  transition: 0.4s;
+  background-color: rgba(197, 9, 9, 0.3);
   scale: 1.01;
 }
 
@@ -317,10 +333,12 @@ a {
   border: 1px solid #ddd;
   padding: 10px 20px;
   cursor: pointer;
+  transition: 0.5s;
 }
 
 .cta-button:hover {
   background-color: #ddd;
+  scale: 1.01;
 }
 .Description_box div {
   padding-bottom: 20px;
@@ -343,6 +361,18 @@ a {
   font-size: 1.25rem;
   place-self: center;
   font-weight: 300;
+}
+
+.productlist_main img {
+  transition: 0.5s;
+}
+
+.productlist_main img:hover {
+  scale: 1.02;
+}
+
+.img_link {
+  text-decoration: none;
 }
 
 @media (min-width: 800px) {
