@@ -57,3 +57,35 @@
 }
 
 /* produktliste side slutter her */
+
+.grid_1-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: start;
+  justify-items: start;
+}
+
+.grid_1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.top-info_product-box {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px;
+}
+
+.buy_product-box {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.Description_box {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}

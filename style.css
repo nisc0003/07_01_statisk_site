@@ -63,11 +63,16 @@ li {
 dt {
   font-family: "lato", serif;
   font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 dd {
   font-family: "lato", serif;
   font-size: 1rem;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: solid rgba(0, 0, 0, 0.1) 2px;
 }
 
 a {
@@ -105,4 +110,79 @@ a {
 
 .price {
   justify-content: flex-end;
+}
+
+.dropdown {
+  position: relative;
+  width: 100%;
+}
+
+.selected {
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+.options {
+  display: none;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.option {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: #f1f1f1;
+}
+
+.add-to-cart {
+  padding: 10px 20px;
+  background-color: rgba(238, 108, 77, 1);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.5rem;
+}
+
+.add-to-cart:hover {
+  background-color: rgba(152, 193, 217, 1);
+  transition: 0.4s;
+}
+
+.details-list {
+  display: none;
+}
+
+/* Optional styling for the CTA button */
+.cta-button {
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  background-color: #ddd;
+}
+.Description_box div {
+  padding-bottom: 20px;
+  border-bottom: solid rgba(0, 0, 0, 0.1) 2px;
+}
+
+@media (min-width: 800px) {
+  main {
+    margin-left: 12vw;
+    margin-right: 12vw;
+  }
 }
