@@ -11,34 +11,34 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
           <img class="product-image" 
                src="https://kea-alt-del.dk/t7/images/webp/640/${productId}.webp" 
                alt="${data.productdisplayname}" />
-          ${data.discount ? `<p class="discount_box">-${data.discount}%</p>` : ""}
+          <p class="discount_box ${data.discount ? "discountActive" : "discountHidden"}">-${data.discount}%</p>
         </div>
         <div class="grid_1">
           <div class="top-info_product-box">
             <div class="brand_info_box">
-              <p class="articletype">${data.articletype || ""}</p>
+              <p class="articletype">${data.articletype}</p>
               <p>/</p>
-              <p class="brandname">${data.brandname || ""}</p>
+              <p class="brandname">${data.brandname}</p>
             </div>
-            <h2 class="productdisplayname">${data.productdisplayname || "Product Name"}</h2>
+            <h2 class="productdisplayname">${data.productdisplayname}</h2>
             <div class="price_box">
-              ${data.discount ? `<p class="prev-price">${data.price || 0},-</p>` : ""}
+              <p class="prev-price ${data.discount ? "prevPriceActive" : "prevPriceHidden"}">${data.price},-</p>
               <p class="price">
-                ${data.discount ? Math.floor(data.price * (1 - data.discount / 100)).toFixed(2) : data.price || 0},-
+                ${data.discount ? Math.floor(data.price * (1 - data.discount / 100)).toFixed(2) : data.price},-
               </p>
             </div>
           </div>
           <div class="buy_product-box">
             <div class="dropdown">
               <div class="selected">
-                ${data.soldout ? "<s>Select Size</s>" : "Select Size"}
+                ${data.soldout ? "No sizes available" : "Select Size"}
               </div>
               <div class="options">
-                <div class="option">${data.soldout ? "<s>X-Small</s>" : "X-Small"}</div>
-                <div class="option">${data.soldout ? "<s>Small</s>" : "Small"}</div>
-                <div class="option">${data.soldout ? "<s>Medium</s>" : "Medium"}</div>
-                <div class="option">${data.soldout ? "<s>Large</s>" : "Large"}</div>
-                <div class="option">${data.soldout ? "<s>X-Large</s>" : "X-Large"}</div>
+                <div class="option ${data.soldout ? "optionsoldOutHidden" : "optionsoldOutActive"}">X-Small</div>
+                <div class="option ${data.soldout ? "optionsoldOutHidden" : "optionsoldOutActive"}">Small</div>
+                <div class="option ${data.soldout ? "optionsoldOutHidden" : "optionsoldOutActive"}">Medium</div>
+                <div class="option ${data.soldout ? "optionsoldOutHidden" : "optionsoldOutActive"}">Large</div>
+                <div class="option ${data.soldout ? "optionsoldOutHidden" : "optionsoldOutActive"}">X-Large</div>
               </div>
             </div>
             <button class="add-to-cart" ${data.soldout ? "disabled" : ""}>
@@ -52,7 +52,7 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
             </div>
             <div>
               <h4>Style Description</h4>
-              <p>${data.styledesc || "No style description available"}</p>
+              <p>${data.styledesc ? data.styledesc : "No style description available"}</p>
             </div>
           </div>
           <div class="dropdown">
@@ -64,39 +64,40 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
               </div>
               <div class="dropdown-item">
                 <dt>Gender</dt>
-                <dd>${data.gender || ""}</dd>
+                <dd>${data.gender}</dd>
               </div>
               <div class="dropdown-item">
                 <dt>Category</dt>
-                <dd>${data.category || ""} - ${data.subcategory || ""} - ${data.articletype || ""}</dd>
+                <dd>${data.category} - ${data.subcategory} - ${data.articletype}</dd>
+</div>
+<div class="dropdown-item">
+  <dt>Variant Name</dt>
+  <dd class="hidden ${data.variantname && "show"}">${data.variantname}</dd>
+</div>
+<div class="dropdown-item">
+  <dt>Brand</dt>
+  <dd class="hidden ${data.brandname && "show"}">${data.brandname}</dd>
+</div>
+<div class="dropdown-item">
+  <dt>Production Year</dt>
+  <dd class="hidden ${data.productionyear && "show"}">${data.productionyear}</dd>
+</div>
+<div class="dropdown-item">
+  <dt>Usage Type</dt>
+  <dd class="hidden ${data.usagetype && "show"}">${data.usagetype}</dd>
+</div>
+<div class="dropdown-item">
+  <dt>Season</dt>
+  <dd class="hidden ${data.season && "show"}">${data.season}</dd>
+</div>
+
+              <div class="dropdown-item">
+                <dt>Base color</dt>            
+           <dd class="hidden ${data.basecolour && "show"}">${data.basecolour}</dd>
               </div>
               <div class="dropdown-item">
-                <dt>Variant Name</dt>
-                <dd>${data.variantname || ""}</dd>
-              </div>
-              <div class="dropdown-item">
-                <dt>Brand</dt>
-                <dd>${data.brandname || ""}</dd>
-              </div>
-              <div class="dropdown-item">
-                <dt>Production Year</dt>
-                <dd>${data.productionyear || ""}</dd>
-              </div>
-              <div class="dropdown-item">
-                <dt>Usage Type</dt>
-                <dd>${data.usagetype || ""}</dd>
-              </div>
-              <div class="dropdown-item">
-                <dt>Season</dt>
-                <dd>${data.season || ""}</dd>
-              </div>
-              <div class="dropdown-item">
-                <dt>Base color</dt>
-                <dd>${data.basecolour || ""}</dd>
-              </div>
-              <div class="dropdown-item">
-                <dt>Material Care</dt>
-                <dd>${data.materialcaredesc || "No Information available"}</dd>
+                <dt class="hidden ${data.materialcaredesc && "show"}"> Material Care</dt>
+                <dd class="hidden ${data.materialcaredesc && "show"}">${data.materialcaredesc}</dd>
               </div>
             </dl>
           </div>
