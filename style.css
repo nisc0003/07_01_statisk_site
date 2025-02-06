@@ -1,3 +1,4 @@
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +11,10 @@ img {
   display: block;
 }
 
+html {
+  --primary: rgba(41, 50, 65, 1);
+}
+
 main {
   margin-top: 30px;
   margin-left: 3vw;
@@ -17,14 +22,13 @@ main {
   margin-bottom: 30px;
 }
 
-/* burgermenu */
-
+/* Burger Menu */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px;
-  background-color: rgba(41, 50, 65, 1);
+  background-color: var(--primary);
 }
 
 header .logo {
@@ -83,6 +87,7 @@ nav {
   margin-bottom: 5px;
   transition: 0.2s linear;
 }
+
 .burger {
   display: none;
 }
@@ -111,13 +116,13 @@ nav {
 
   nav.active .menu {
     display: block;
-    background-color: #000000;
+    background-color: var(--primary);
     position: absolute;
-    top: 94px;
+    top: 53px;
     left: 0;
     width: 100%;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1;
+    z-index: 100;
   }
 
   nav.active .menu li {
@@ -129,8 +134,7 @@ nav {
   }
 }
 
-/* generel text styling */
-
+/* General Text Styling */
 h1 {
   font-family: "roboto", serif;
   font-size: 3rem;
@@ -164,6 +168,7 @@ h5 {
 p {
   font-family: "lato", serif;
   font-size: 1rem;
+  font-weight: 400;
 }
 
 ul {
@@ -238,18 +243,17 @@ a {
   scale: 1.01;
 }
 
-/*  prduktliste */
-
+/* Product List Page */
 .sold_out_box {
   padding: 10px;
 }
 
 .discount_box {
   padding: 10px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 18px;
+  padding-bottom: 18px;
   background-color: rgba(197, 9, 9, 0.8);
-  border-radius: 50px;
+  border-radius: 80px;
   margin: 5px;
 }
 
@@ -327,7 +331,6 @@ a {
   display: none;
 }
 
-/* Optional styling for the CTA button */
 .cta-button {
   background-color: #f1f1f1;
   border: 1px solid #ddd;
@@ -345,13 +348,54 @@ a {
   border-bottom: solid rgba(0, 0, 0, 0.1) 2px;
 }
 
-/* footer */
+/* Visibility classes*/
 
+.hidden {
+  visibility: hidden;
+}
+
+.show {
+  visibility: visible;
+}
+
+.discountActive {
+  visibility: visible;
+}
+
+.discountHidden {
+  visibility: hidden;
+}
+
+.soldOutActive {
+  visibility: visible;
+}
+
+.soldOutHidden {
+  visibility: hidden;
+}
+
+.optionsoldOutActive {
+  visibility: visible;
+}
+
+.optionsoldOutHidden {
+  text-decoration: line-through;
+}
+
+.prevPriceActive {
+  visibility: visible;
+}
+
+.prevPriceHidden {
+  visibility: hidden;
+}
+
+/* Footer */
 .footer_flexbox {
   justify-content: space-between;
   align-items: center;
   padding: 30px;
-  background-color: rgba(41, 50, 65, 1);
+  background-color: var(--primary);
 }
 
 .footer_flexbox p {
@@ -373,6 +417,24 @@ a {
 
 .img_link {
   text-decoration: none;
+}
+
+.index_box_1-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.slogan {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: roboto;
+  font-size: 4.5rem;
+  font-weight: 800;
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  border-radius: 8px;
 }
 
 @media (min-width: 800px) {

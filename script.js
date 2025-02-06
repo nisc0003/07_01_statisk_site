@@ -77,5 +77,14 @@ if (burger && nav && menu) {
   }
 }
 
+fetch("https://kea-alt-del.dk/t7/api/categories")
+  .then((response) => response.json())
+  .then((data) => showMenu(data));
+
+function showMenu(categories) {
+  const markup = categories.map((category) => `<li><a href= "productlist.html?category=${category.category}">${category.category}</a></li>`).join("");
+  menu.innerHTML = markup;
+}
+
 // Call setup function
 window.addEventListener("load", setupDropdownAndCart);

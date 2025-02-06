@@ -16,8 +16,8 @@ function showList(products) {
           <div class="product_img_box">
             <img class="product-image" src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" 
               alt="${product.productdisplayname}" />
-            ${product.discount ? `<p class="discount_box">-${product.discount}%</p>` : ""}
-            ${product.soldout ? `<p class="sold_out_box">Sold Out</p>` : ""}
+            <p class="discount_box ${product.discount ? "discountActive" : "discountHidden"}">-${product.discount}%</p>
+            <p class="sold_out_box ${product.soldout ? "soldOutActive" : "soldOutHidden"}">Sold Out</p>
           </div>
         </a>
         <h3 class="productdisplayname">${product.productdisplayname}</h3>
@@ -27,10 +27,8 @@ function showList(products) {
           <p class="articletype">${product.articletype}</p>
         </div>
         <div class="price_box">
-          ${product.discount ? `<p class="prev-price">${product.price || 0},-</p>` : ""}
-          <p class="price">
-            ${product.discount ? Math.floor(product.price * (1 - product.discount / 100)).toFixed(2) : product.price || 0},-
-          </p>
+          <p class="prev-price ${product.discount ? "prevPriceActive" : "prevPriceHidden"}">${product.price},-</p>
+          <p class="price">${product.discount ? Math.floor(product.price * (1 - product.discount / 100)).toFixed(2) : product.price},-</p>
           <a href="product.html?id=${product.id}">Read More</a>
         </div>
       </div>
